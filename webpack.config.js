@@ -1,8 +1,11 @@
+var webpack = require('webpack');
+
 module.exports = {
-  entry: './src/index.js',
+  entry: ['./src/index.js', 'webpack/hot/dev-server'],
   output: {
     path: __dirname + '/dist',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: __dirname + '/dist'
   },
   devtool: 'eval-source-map',
   cache: true,
@@ -10,11 +13,8 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        }
+        loaders: ['react-hot', 'babel-loader'],
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -25,5 +25,8 @@ module.exports = {
         loader: 'style-loader!css-loader!less-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };

@@ -2,10 +2,10 @@
   "name": "webpack-redux",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
-    "bundle": "./node_modules/.bin/webpack",
-    "bundle:watch": "./node_modules/.bin/webpack -w",
+    "bundle": "./node_modules/.bin/webpack -p --progress",
+    "bundle:watch": "npm run bundle -- -w",
     "lint": "./node_modules/.bin/eslint src/**/*.js"
   },
   "author": "",
@@ -25,7 +25,9 @@
     "eslint-plugin-react": "^6.8.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "react-hot-loader": "^1.3.1",
     "style-loader": "^0.13.1",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }
