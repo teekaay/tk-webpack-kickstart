@@ -4,11 +4,17 @@ module.exports = {
     path: __dirname + '/dist',
     filename: 'bundle.js'
   },
+  devtool: 'eval-source-map',
+  cache: true,
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015', 'react']
+        }
       },
       {
         test: /\.css$/,
