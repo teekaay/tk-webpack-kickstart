@@ -5,7 +5,7 @@
   "main": "dist/bundle.js",
   "scripts": {
     "bundle": "./node_modules/.bin/webpack -p --progress",
-    "bundle:watch": "npm run bundle -- -w",
+    "bundle:watch": "node server.js",
     "lint": "./node_modules/.bin/eslint src/**/*.js"
   },
   "author": "",
