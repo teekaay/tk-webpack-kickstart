@@ -3,9 +3,9 @@ var webpack = require('webpack');
 module.exports = {
   entry: ['./src/index.js', 'webpack/hot/dev-server'],
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/public',
     filename: 'bundle.js',
-    publicPath: __dirname + '/dist'
+    publicPath: __dirname + '/public'
   },
   devtool: 'eval-source-map',
   cache: true,
