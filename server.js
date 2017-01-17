@@ -10,6 +10,10 @@ config.entry.unshift('webpack-dev-server/client?http://localhost:8080/',
                      'webpack/hot/dev-server');
 
 var compiler = webpack(config);
-var server = new WebpackDevServer(compiler);
+var server = new WebpackDevServer(compiler, {
+  hot: true,
+  inline: true,
+  publicPath: '/dist/'
+});
 
 server.listen(port, 'localhost');

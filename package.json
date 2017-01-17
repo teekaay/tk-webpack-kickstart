@@ -16,11 +16,11 @@
   "author": "Thomas Klinger",
   "license": "ISC",
   "dependencies": {
-    "immutable": "^3.8.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-redux": "^5.0.2",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.4"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
@@ -40,5 +40,16 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
+  },
+  jest: {
+    "bail": true,
+    "verbose": true,
+    "notify": true
+  },
+  babel: {
+    "presets": [
+      "es2015",
+      "react"
+    ]
   }
 }
