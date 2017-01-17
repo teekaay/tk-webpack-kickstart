@@ -41,12 +41,12 @@
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   },
-  jest: {
+  "jest": {
     "bail": true,
     "verbose": true,
     "notify": true
   },
-  babel: {
+  "babel": {
     "presets": [
       "es2015",
       "react"
