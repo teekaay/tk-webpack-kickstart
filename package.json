@@ -10,7 +10,7 @@
     "bundle:profile": "./node_modules/.bin/webpack -p --profile --json > stats.json",
     "bundle:clean": "rm -rf dist",
     "lint": "./node_modules/.bin/eslint src/**/*.js",
-    "test": "./node_modules/.bin/jest --config .jestrc",
+    "test": "./node_modules/.bin/jest",
     "test:watch": "npm run test --watch"
   },
   "author": "Thomas Klinger",
