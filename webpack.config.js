@@ -1,32 +1,13 @@
-var webpack = require('webpack');
+var environment = process.env.NODE_ENV || 'development';
+console.info('Working in ' + environment + ' environment');
 
-module.exports = {
-  entry: ['./src/index.js', 'webpack/hot/dev-server'],
-  output: {
-    path: __dirname + '/dist',
-    filename: 'bundle.js',
-    publicPath: __dirname + '/dist'
-  },
-  devtool: 'eval-source-map',
-  cache: true,
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loaders: ['react-hot', 'babel-loader'],
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      },
-      {
-        test: /\.less$/,
-        loader: 'style-loader!css-loader!less-loader'
-      }
-    ]
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ]
-};
+switch(environment) {
+  case 'production':
+    module.exports = require('./config/webpack.production.config');
+    break;
+  case 'development':
+    module.exports = require('./config/webpack.dev.config');
+    break;
+  default:
+    console.error('Unknown environment ' + environment);
+}
