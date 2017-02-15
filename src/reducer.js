@@ -1,19 +1,19 @@
 import { combineReducers } from 'redux';
-import { CHANGE_MESSAGE } from './actions';
+import { INIT_APP } from './actions';
 
 export const initialState = {
-  message: ''
+
 };
 
-function message(state = '', action) {
+function initApp(state = initialState, action) {
   switch(action.type) {
-    case CHANGE_MESSAGE:
-      return action.message;
+    case INIT_APP:
+      return Object.assign({}, state, action.payload);
     default:
       return state;
   }
 }
 
 export const rootReducer = combineReducers({
-  message
+
 });

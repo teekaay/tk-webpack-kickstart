@@ -1,8 +1,8 @@
-export const CHANGE_MESSAGE = 'CHANGE_MESSAGE';
+export const INIT_APP = 'INIT_APP';
 
-export function changeMessage(message) {
+export function initApp(data = {}) {
   return {
-    type: CHANGE_MESSAGE,
-    message: message
+    type: INIT_APP,
+    payload: data
   };
 }
