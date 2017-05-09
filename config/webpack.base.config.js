@@ -1,4 +1,4 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
   entry: [
@@ -9,13 +9,13 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: path.join(process.cwd(), 'dist')
   },
-  devtool: 'eval',
+  devtool: 'source-maps',
   cache: true,
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loaders: ['react-hot', 'babel-loader'],
+        loaders: ['react-hot-loader', 'babel-loader'],
         exclude: [/node_modules/]
       },
       {
@@ -27,13 +27,12 @@ module.exports = {
         loader: 'style-loader!css-loader!less-loader'
       },
       {
-	test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-	loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-	
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
       },
       {
-	test: /\.(ttf|otf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?|(jpg|gif)$/,
-	loader: 'file-loader'
+        test: /\.(ttf|otf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?|(jpg|gif)$/,
+        loader: 'file-loader'
       }  
     ]
   },

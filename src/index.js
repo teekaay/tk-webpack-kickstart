@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Store from './store';
 
-import { initApp, INIT_APP } from './actions';
-import App from './components/App';
+import styles from './main.less';
 
-Store.dispatch(initApp());
+function App() {
+  return(
+    <h1>Hello, there! Whats up?</h1>
+  );
+}
 
 ReactDOM.render(
   <App />,
