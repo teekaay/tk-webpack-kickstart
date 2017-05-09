@@ -7,7 +7,7 @@
     "bundle": "NODE_ENV=production ./node_modules/.bin/webpack -p --progress",
     "bundle:watch": "node server.js",
     "bundle:profile": "npm run bundle -- --profile --json > stats.json",
-    "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "lint": "./node_modules/.bin/eslint --ignore-pattern 'src/**/*-test.js' src/**/*.js",
     "test": "./node_modules/.bin/jest",
     "test:watch": "npm run test -- --watch",
     "test:cov": "npm run test -- --coverage"
