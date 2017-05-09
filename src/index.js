@@ -1,13 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import App from './App';
 import styles from './main.less';
-
-function App() {
-  return(
-    <h1>Hello, there! Whats up?</h1>
-  );
-}
 
 ReactDOM.render(
   <App />,

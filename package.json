@@ -1,15 +1,16 @@
 {
   "name": "webpack-react-boilerplate",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Webpack for React+Enzyme+Webpack",
   "main": "dist/bundle.js",
   "scripts": {
     "bundle": "NODE_ENV=production ./node_modules/.bin/webpack -p --progress",
     "bundle:watch": "node server.js",
-    "bundle:profile": "./node_modules/.bin/webpack -p --profile --json > stats.json",
+    "bundle:profile": "npm run bundle -- --profile --json > stats.json",
     "lint": "./node_modules/.bin/eslint src/**/*.js",
     "test": "./node_modules/.bin/jest",
-    "test:watch": "npm run test --watch"
+    "test:watch": "npm run test -- --watch",
+    "test:cov": "npm run test -- --coverage"
   },
   "author": "Thomas Klinger",
   "license": "ISC",
@@ -26,21 +27,25 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.26.1",
+    "enzyme": "^2.8.2",
     "eslint": "^3.12.2",
     "eslint-plugin-react": "^6.9.0",
     "file-loader": "^0.9.0",
-    "jest": "^18.1.0",
+    "jest": "^19.0.1",
     "jest-babel": "^1.0.1",
     "jest-enzyme": "^3.1.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "react-addons-test-utils": "^15.5.1",
     "react-hot-loader": "^1.3.1",
+    "react-test-renderer": "^15.5.4",
     "style-loader": "^0.13.1",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "testRegex": ".*-test.js$",
     "bail": true,
     "verbose": true,
     "notify": true
