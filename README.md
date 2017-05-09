@@ -10,7 +10,7 @@ Suited for my own needs to get up and running.
 * webpack-loader for css, files and less
 * linter (ESlint) with react-plugins
 * ES6 with babel
-* tests with `Jest`
+* tests with `Jest` and `jest-enzyme`
 * npm tasks for linting, testing, development and bundle
 
 ## NPM tasks
@@ -21,6 +21,7 @@ development. Run `npm install` first, then you can do `npm run <task>` where
 
 * `test` Run tests with Jest (must be in a folder called `__tests__` (can be overridden)
 * `test:watch` Run tests in watch mode
+* `test:cov` Determine test coverage
 * `lint` Run ESLint on files in `src`
 * `bundle` Bundle and compile scripts
 * `bundle:watch` Run development server
