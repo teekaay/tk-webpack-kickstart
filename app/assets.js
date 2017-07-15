@@ -1,1 +1,1 @@
-require('./app.css');
+import './stylesheets/app.css';
