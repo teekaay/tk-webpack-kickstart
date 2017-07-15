@@ -4,43 +4,58 @@ Suited for my own needs to get up and running.
 
 ## Features
 
-* Example application already set up 
-* webpack configuration for `development` (default) and `production` in `/config`
-* webpack-dev-server with hot reload
-* webpack-loader for css, files and less
-* linter (ESlint) with react-plugins
-* ES6 with babel
-* tests with `Jest` and `jest-enzyme`
-* npm tasks for linting, testing, development and bundle
+* `yarn`
+* ES6, React
+* Testing (via `enzyme` and `jest`)
+* Linter included
+* `pre-commit` runs linter and tests automatically on commit
+* Webpack and Dev Server with hot reload
+
+## Organization
+
+    |-- app
+        |-- components // Contains React components
+        |-- stylesheets // Contains CSS / LESS / SASS
+    |-- index.js // Entrypoint for app
+    |-- assets.js // Entrypoints for stylesheets and assets
+
+Webpack is configures to generate two bundles: `app.bundle.js` and
+`assets.bundle.js`. To speed up loading time of the app,
+the assets bundle is included in the header of `index.html`.
+
+Assets should **NOT** be included within the application code,
+but rather be required by `app/assets.js`. This makes the test
+setup easier and allows for separation of styling and logic.
+
+If you want to include images, fonts etc, create `app/assets` and
+an npm task like
+
+    "copy:assets": "mkdir -p dist && cp app/assets dist/assets"
 
 ## NPM tasks
 
-By default, there are several tasks you can run to do the most common tasks in 
+By default, there are several tasks you can run to do the most common tasks in
 development. Run `npm install` first, then you can do `npm run <task>` where
 `task` is one of:
 
-* `test` Run tests with Jest (must be in a folder called `__tests__` (can be overridden)
+* `clean`: Removes generated files
+* `test` Run tests with Jest (must be called `Component.spec.js`)
 * `test:watch` Run tests in watch mode
-* `test:cov` Determine test coverage
-* `lint` Run ESLint on files in `src`
-* `bundle` Bundle and compile scripts
-* `bundle:watch` Run development server
-* `bundle:profile` Run the Webpack profiler. Creates `stats.json` which can be uploaded to the [webpack stats analyzer](https://webpack.github.io/analyse/)
+* `test:coverage` Determine test coverage
+* `lint` Run ESLint on files in `app`
+* `bundle:dist` Bundle and compile scripts to final bundle
+* `bundle:dev` Run development server
+* `bundle:profile` Run the Webpack profiler. Creates `build-stats.json` which can be uploaded to the [webpack stats analyzer](https://webpack.github.io/analyse/)
 
 ## Notes
-
-### NODE_ENV
-
-If a production build is executed, the environment is
-automatically set to `production`.
 
 ### Useful libraries
 
 Some libraries that might be useful but are not included:
 
 * `Immutable.js` and `redux-immutable` for larger apps
-* `redux` for more complex apps
+* `redux` for more complex apps with state management
 * `react-bootstrap` for layout using bootstrap (woff and ttf loaders for fonts and glyphicons are included!)
 * `react-vis` for plots
-* `axios` for AJAX + promises
-* `lodash` for utilities 
+* `axios` for AJAX
+* `lodash` for utilities
