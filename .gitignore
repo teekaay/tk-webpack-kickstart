@@ -1,4 +1,4 @@
 node_modules
 dist
 coverage
-stats.json
+build-stats.json
