@@ -10,7 +10,7 @@
     "test": "./node_modules/.bin/jest",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage --coverageDirectory reports",
-    "lint": "./node_modules/.bin/eslint -c eslintrc.js --format stylish src/**/*.js",
+    "lint": "./node_modules/.bin/eslint -c .eslintrc.js --format stylish src/**/*.js",
     "bundle:dist": "NODE_ENV=production ./node_modules/.bin/webpack",
     "bundle:profile": "./node_modules/.bin/webpack --profile --json > build-stats.json",
     "bundle:dev": "node dev-server.js",

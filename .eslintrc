@@ -1,19 +1,19 @@
 {
   "ecmaFeatures": {
     "jsx": true,
-    "modules": true         
+    "modules": true
   },
   "env": {
     "browser": true,
-    "node": true          
+    "node": true
   },
   "parser": "babel-eslint",
     "rules": {
       "quotes": [2, "single"],
-      "strict": [2, "never"]                    
+      "strict": [2, "never"]
   },
   "plugins": [
-      "react"      
+      "react"
   ],
-  "extends": ["eslint:recommended", "plugin:react/recommended"] 
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
 }
